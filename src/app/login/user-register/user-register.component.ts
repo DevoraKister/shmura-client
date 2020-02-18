@@ -232,7 +232,6 @@ export class UserRegisterComponent implements OnInit
     // this.currentUser.UserMail = this.registerForm.controls["email"].value;
     this.currentUser.password = await sha256(this.password);
 
-    this.currentUser.password = await sha256(this.currentUser.password);
     localStorage.setItem("token", this.currentUser.password);
     this.currentUser.UserIsSmartAgent = false;
     // this.currentUser.= this.areas.find(p => p.AreaName == area).AreaId

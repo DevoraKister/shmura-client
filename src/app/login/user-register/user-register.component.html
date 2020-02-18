@@ -22,7 +22,7 @@
         <input id="login__password" type="password" name="password" class="form__input" placeholder="*סיסמא"
           [(ngModel)]="password" required minlength="6">
       </div>
-      <mat-error *ngIf="currentUser&&currentUser.password&&currentUser.password.length<6">אורך הסיסמא חייב להיות מינימום 6 תוים 
+      <mat-error *ngIf="password&&password.length<6">אורך הסיסמא חייב להיות מינימום 6 תוים 
       </mat-error>
       <div class="form__field">
         <label for="login__phone"><svg class="icon">
