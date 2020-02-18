@@ -44,7 +44,6 @@ load:boolean=true;
 
   }
   ngOnInit() {
-    debugger;
     this.managerService.listSignedJob().subscribe(res => {
       this.managerService.jobSign = res;
       this.load=false;

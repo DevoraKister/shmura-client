@@ -103,17 +103,14 @@ removeAdv(id:number){
 
   getBossList(): Observable<Boss[]> 
   {
-    debugger;
     return this.httpClient.get<Boss[]>(this.apiURL + 'geBossList/');
   }
   getJobsList(): Observable<JobView[]> 
   {
-    debugger;
     return this.httpClient.get<JobView[]>(this.apiURL + 'getJobsList/');
   }
   removeJob(jobId:number): Observable<JobView[]> 
   {
-    debugger;
     return this.httpClient.get<JobView[]>(this.apiURL + 'removeJob/'+jobId);
   }
   getJobById(idJob1: number): Observable <Job> {

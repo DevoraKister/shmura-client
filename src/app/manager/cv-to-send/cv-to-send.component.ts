@@ -21,7 +21,6 @@ export class CvToSendComponent implements OnInit {
     //   this.cv = "http://localhost:53790/UploadFile/" + state;
      
     // })
-    debugger;
   }
   sendCv(userId) {
     this.managerService.sendCv(userId).subscribe(res => {
@@ -36,13 +35,10 @@ export class CvToSendComponent implements OnInit {
 
   }
   sendAllCv() {
-    debugger;
     for (let index = 0; index < this.managerService.signedUser.length; index++) {
       this.managerService.sendCv(this.managerService.signedUser[index].UserId).subscribe(res => {
-        debugger
         if (res) {
           // this.sign.jobSign=res;
-          debugger
           this.managerService.signedUser = this.managerService.signedUser.filter(p => p.UserId != this.managerService.signedUser[index].UserId);
           if(this.managerService.signedUser.length==0){
             this.afterSendAllCv();
@@ -56,7 +52,6 @@ export class CvToSendComponent implements OnInit {
     this.dialog.closeAll();
     this._snackBar.open('קורות החיים נשלחו בהצלחה', 'X', { duration: 6000 });
     this.managerService.listSignedJob().subscribe(res => {
-      debugger
       this.managerService.jobSign = res;
     })
   }

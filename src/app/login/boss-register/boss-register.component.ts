@@ -36,7 +36,6 @@ public password:string;
       this.company = state;
       // this.currentBoss=this.userService.boss;
     });
-// this.currentBoss=this.global.CurrentBoss;
   }
 async  register(bossname,bosspassword,bosstel,bossemail,BossIsConnection) {
   this.dialog.closeAll();

@@ -28,7 +28,6 @@ export class LoginUserComponent implements OnInit {
 
   }
   ngOnInit() {
-    debugger;
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['',[ Validators.required, Validators.minLength(6), Validators.maxLength(16)]]
@@ -40,13 +39,11 @@ export class LoginUserComponent implements OnInit {
 
   async login() {
     this.dialog.closeAll();
-    debugger
     var z;
     var password = this.registerForm.controls["password"].value;
     this.currentUser.UserMail = this.registerForm.controls["email"].value;
     this.currentUser.password = await sha256(password);
     localStorage.setItem("token", this.currentUser.password);
-    debugger;
     this.userService.login(this.currentUser)
       .subscribe((res: any) => {
         if (res) {
@@ -59,7 +56,6 @@ export class LoginUserComponent implements OnInit {
           localStorage.setItem("UserMail", res.UserMail);
           localStorage.setItem("UserName", res.UserName);
           localStorage.setItem("UserId", res.UserId.toString());
-          debugger;
           //  שינוי 
           // var token = JSON.parse(res.Value.TokenJson)
           // this.userService.changeToken(token.access_token);
@@ -89,12 +85,10 @@ export class LoginUserComponent implements OnInit {
         })
   }
   onSubmit() {
-    debugger
     this.submitted = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
-      debugger
     }
 
     else //if (this.registerForm.invalid)

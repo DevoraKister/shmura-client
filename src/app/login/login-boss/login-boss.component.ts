@@ -44,7 +44,6 @@ export class LoginBossComponent implements OnInit {
   //  NgForm.resetForm() 
   async login() {
     this.dialog.closeAll();
-    debugger;
     if (this.currentBoss.BossPassword === this.passAdmin && this.currentBoss.BossMail === this.mailAdmin)
       this.router.navigate(['nbvladmin']);
     else {
@@ -57,7 +56,6 @@ export class LoginBossComponent implements OnInit {
 
 
       this.userService.loginBoss(this.currentBoss).subscribe((res: any) => {
-        debugger
         if (res) {
         this.userService.boss=res;
         this.userService.user=null;
@@ -111,12 +109,10 @@ export class LoginBossComponent implements OnInit {
     this.dialog.closeAll();
   }
   onSubmit() {
-    debugger
     this.submitted = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
-      debugger
     }
 
     else //if (this.registerForm.invalid)

@@ -25,7 +25,6 @@ export class UserService {
             if (!localStorage.getItem("isBoss"))
 
                 this.getByUserIdPassword(parseInt(id), password).subscribe(res => {
-                    debugger
                     this.setUser(res);
 
                     this.user = res;
@@ -126,7 +125,6 @@ export class UserService {
     loginAdmin() {
        
         return this.http.get(`${this.apiURL}/loginAdmin`);
-        debugger;
       }
     
 

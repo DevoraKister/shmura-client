@@ -49,7 +49,6 @@ export class EditAdvComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    debugger
     this.adv.AdvStatus=false;
     this.managerService.addAdv(this.adv).subscribe(s => {
       // if (s)
@@ -71,7 +70,6 @@ export class EditAdvComponent implements OnInit {
   // name += this.fileToUpload.name.substr(this.fileToUpload.name.lastIndexOf('.'));;
   _formData.append("file", this.fileToUpload);
   this.managerService.sendFile(_formData).subscribe(res => {
-    debugger
     // if (res.ReasonPhrase=="OK"){
       this._snackBar.open("הפרסומת נוספה בהצלחה","X",{duration:600});
     // }

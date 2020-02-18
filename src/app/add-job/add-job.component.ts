@@ -55,7 +55,6 @@ export class AddJobComponent implements OnInit {
 
   addParts(Workspace, outnet, parts, subjectjob, role, describe, require, experience) {
 
-    debugger;
     this.currentJob.JobWorkspaceId = Workspace.value;
     this.currentJob.JobPartOutNetId = outnet.value;
     this.currentJob.JobPartId = parts.value;
@@ -68,13 +67,11 @@ export class AddJobComponent implements OnInit {
       this.currentJob.JobCompanyId = parseInt(localStorage.getItem("BossCompanyId"));
     else
     this.currentJob.JobCompanyId = this.companyId;
-      debugger;
     // this.currentJob.CompanyId=parseInt(localStorage.getItem("BossCompanyId"));
     if (!this.isManager)
       this.currentJob.JobBossId = parseInt(localStorage.getItem("UserId"));
     else
       this.currentJob.JobBossId = 1;
-    debugger
     this.add();
   }
   company1(id: number) {

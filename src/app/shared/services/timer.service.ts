@@ -10,7 +10,6 @@ export class TimerService {
 
   constructor(public httpClient: HttpClient) { }
 timerSmartAgent(){
-  debugger
   return this.httpClient.get(this.apiURL+'SetTimer');
 }
 

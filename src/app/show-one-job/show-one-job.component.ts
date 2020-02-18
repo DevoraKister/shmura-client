@@ -22,7 +22,6 @@ p
     public router: Router, public route: ActivatedRoute, public jobTable: JobTableComponent) {
     // route.params.subscribe(params=>{
     // this.listIdJob=JSON.parse(params['list']);
-    debugger;
     this.str = this.route.snapshot.params["str"];
     var s = "";
     for (let i = 0; i < this.str.length; i++) {
@@ -49,7 +48,6 @@ p
     this.listIdJob.push(temp);
     this.jobService.signToSomeJob(this.listIdJob).subscribe(res => {
       if (res) {
-        debugger
         this._snackBar.open('נרשמת בהצלחה', 'קבלתי', { duration: 3000 });
         this.router.navigate(['/home/job-table']);
         if (!localStorage.getItem("myJobs")) {// אם עדיין אין סל   

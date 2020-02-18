@@ -72,14 +72,12 @@ export class ResetPasswordComponent implements OnInit {
 
       }
      
-    debugger;
     let email = this.registerForm.controls["email"].value;
     let password  =await sha256(this.registerForm.controls["password"].value);
   
     this.userService.resetPassword(email, password).subscribe(res => {
       this.user=res;
       if (res) {
-        debugger;
        this. user = res;
         this._snackBar.open('הסיסמה עודכנה בהצלחה', 'X', { duration: 3000 });
         this.router.navigate(['']);

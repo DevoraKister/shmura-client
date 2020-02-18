@@ -48,7 +48,6 @@ export class SmartAgentComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger
     this.details = true;
     this.getUser(this.userService.user);
     // this.currentUser=this.userService.user;

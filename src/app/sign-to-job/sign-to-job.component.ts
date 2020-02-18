@@ -35,7 +35,6 @@ export class SignToJobComponent implements OnInit {
       }
     }
     this.userService.getCV(this.currentUser.UserId).subscribe(state => {
-      debugger;
       this.cv =environment.baseRoute+ "UploadFile/" + state;
       // this.userService.downloadPDF(this.cv).subscribe(res => {
       //   const fileURL = URL.createObjectURL(res);

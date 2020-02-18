@@ -39,7 +39,6 @@ export class RecommendsShowComponent implements OnInit {
     this.IdJob = this.jobService.currentJobId;
     // this.currentRecomend.RecomemdCompanyId=id;
     this.currentRecomend.RecomendUserId = parseInt(localStorage.getItem("UserId"));
-    debugger;
     this.jobService.getRecommendToJob(this.IdJob).subscribe(res => {
       // this.jobService.getRecommendToJob(this.IdJob).subscribe(res=>{
       if (res && res.length > 0) {

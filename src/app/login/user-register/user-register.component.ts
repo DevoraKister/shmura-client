@@ -61,6 +61,7 @@ export class UserRegisterComponent implements OnInit
   public = new MyErrorStateMatcher();
   hashPassword: string;
   areaText: string;
+  password:string;
   @ViewChild('autoGroup1') auto;
   // cities: City[] =  [];
 
@@ -203,7 +204,6 @@ export class UserRegisterComponent implements OnInit
   // }
   areaName(area) {
     if (area)
-      debugger
     var id = this.areas.find(p => p.AreaName == area);
     if (id)
       this.getCity(id.AreaId);
@@ -228,6 +228,10 @@ export class UserRegisterComponent implements OnInit
     this.fileToUpload = files.item(0);
   }
   async register(city, area, part, sub) {
+    // var password = this.registerForm.controls["password"].value;
+    // this.currentUser.UserMail = this.registerForm.controls["email"].value;
+    this.currentUser.password = await sha256(this.password);
+
     this.currentUser.password = await sha256(this.currentUser.password);
     localStorage.setItem("token", this.currentUser.password);
     this.currentUser.UserIsSmartAgent = false;

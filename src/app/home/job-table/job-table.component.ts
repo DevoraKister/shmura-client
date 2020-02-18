@@ -202,7 +202,6 @@ export class JobTableComponent implements OnInit {
       this.cities = null;
   }
   cityName(text) {
-    debugger;
     var city = this.cities.find(p => p.CityName == text)
     if (city)
       return city.CityId;
@@ -229,14 +228,12 @@ export class JobTableComponent implements OnInit {
     return this.parts ? this.parts.map(m => m.PartName) : [];
   }
   getCity(event) {
-    debugger
     if (event.value)
       this.jobService.getCity(event.value).subscribe(state => {
         this.cities = state;
       });
   }
   getJobs(area1, part1, sub1, city1) {
-    debugger;
     this.load = true;
     //בדיקת הערכים. אם לא בחרו מאתחל ב1
     if (city1.options.first != undefined)
@@ -283,7 +280,6 @@ export class JobTableComponent implements OnInit {
   dataSource: any;
   subjectBasket;
   registerToJob(idJob: number) {
-    debugger
     var user = 0;
 
     if (localStorage.getItem("token") == null || localStorage.getItem("isBoss")) {
@@ -317,7 +313,6 @@ export class JobTableComponent implements OnInit {
     }
   }
   UpdateDetails(idJob: number) {
-    debugger
     if (localStorage.getItem("token") == null || localStorage.getItem("isBoss")) {
       const dialogRef = this.dialog.open(LoginUserComponent, {
         // width: '250px',

@@ -42,14 +42,12 @@ export class ForumComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => { });
     }
     else {
-      debugger
       this.currentQuestion.Question1 = qu.value;
       if (top.value)
         this.currentQuestion.QueTopicId = top.value;
         else
         this.currentQuestion.QueTopicId = 5;//if did not choose a topic - let generic
       this.currentQuestion.QueUserId = parseInt(localStorage.getItem("UserId"));
-      debugger
       this.forumService.askQuetion(this.currentQuestion).subscribe(res => {
         if (res) {
           this.snakbar.open("תודה על השאלה, נשיב לך בהקדם ", "x", { duration: 6000 })

@@ -20,10 +20,10 @@
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
           </svg><span class="hidden">סיסמא</span></label>
         <input id="login__password" type="password" name="password" class="form__input" placeholder="*סיסמא"
-          [(ngModel)]="currentUser.password" required minlength="6">
+          [(ngModel)]="password" required minlength="6">
       </div>
-      <!-- <mat-error *ngIf="currentUser.password!=''&&currentUser.password.length<6">אורך הסיסמא חייב להיות מינימום 6 תוים 
-      </mat-error>-->
+      <mat-error *ngIf="currentUser&&currentUser.password&&currentUser.password.length<6">אורך הסיסמא חייב להיות מינימום 6 תוים 
+      </mat-error>
       <div class="form__field">
         <label for="login__phone"><svg class="icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#phone"></use>
@@ -31,7 +31,7 @@
         <input id="login__phone" type="text" name="phone" class="form__input" placeholder="*טלפון"
           [(ngModel)]="currentUser.UserTel" minlength="6" required pattern="^\d+$">
       </div>
-      <!-- <mat-error *ngIf="currentUser.UserTel!=''&&currentUser.UserTel.length<9">מספר הטלפון לא תקין</mat-error> -->
+      <mat-error *ngIf="currentUser&&currentUser.UserTel&&currentUser.UserTel.length<9">מספר הטלפון לא תקין</mat-error>
       <!-- <div class="form__field">
         <label for="login__mail"><svg class="icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail"></use>
@@ -107,64 +107,6 @@
       </form>
 
 
-
-
-
-
-      <!-- <div class="form__field">
-        <label for="login__password"><svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
-          </svg><span class="hidden">סוג משרה</span></label>
-        <select class="form__input" id="part" (change)="part($event.target.value)">
-          <option *ngFor="let part of jobParameters.Parts" value="{{part.PartId}}"> {{part.PartName}}</option>
-        </select>
-      </div>
-
-      <div class="form__field">
-        <label for="login__password"><svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
-          </svg><span class="hidden">מקצוע</span></label>
-        <select class="form__input" id="sub" (change)="sub($event.target.value)">
-          <option *ngFor="let sub of jobParameters.SubjectJob" value="{{sub.SubId}}">{{sub.SubName}}</option>
-        </select>
-      </div>
-
-      <div class="form__field">
-        <label for="login__password"><svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
-          </svg><span class="hidden">אזור מגורים</span></label>
-        <select id="area" class="form__input" (change)="getCity($event)">
-
-          <option *ngFor="let sub of jobParameters.Areas" value="{{sub.AreaId}}">{{sub.AreaName}}</option>
-        </select>
-      </div>
-
-      <div class="form__field" *ngIf="cities">
-        <label for="login__password"><svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
-          </svg><span class="hidden">אזור מגורים</span></label>
-
-        <select class="form__input" name="dfg" (change)="city($event.target.value)">
-          <option *ngFor="let city of cities" value="{{city.CityId}}">{{city.CityName}}</option>
-        </select>
-      </div>
-
-      <div class="form__field" *ngIf="!cities">
-        <label for="login__password"><svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
-          </svg><span class="hidden">אזור מגורים</span></label>
-
-        <select class="form__input" name="jj" (change)="city($event.target.value)">
-          <option *ngFor="let city of jobParameters.Cities" value="{{city.CityId}}">{{city.CityName}}</option>
-        </select>
-      </div> -->
-
-
-      <!-- <mat-checkbox>Check me!</mat-checkbox> -->
-      <!-- <p> מעוניינת לקבל חיזוק יומי במייל</p>
-      <input type="checkbox" name="yy" #chizuk [(ngModel)]="currentUser.UserIsChizuk" value="" /> -->
-      <!-- <p>מאשרת קבלת עדכונים במייל</p> -->
-      <!-- <input type="checkbox" #update name="UserIsUpdate" [(ngModel)]="currentUser.UserIsUpdate" value="true" /> -->
 
 
       <div class="form__field">

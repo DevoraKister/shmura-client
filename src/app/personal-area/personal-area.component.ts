@@ -37,7 +37,6 @@ export class PersonalAreaComponent implements OnInit {
 
   }
   closeJob(jobId: number) {
-    debugger;
     this.jobService.closeJob(jobId, this.isByUs).subscribe(res => {
       if (res) {
         this.myJobs = res;

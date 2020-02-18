@@ -54,7 +54,6 @@ public loading;
     this.userService.resetMail(email)
       .subscribe(res => {
         if (res) {
-          debugger;
            this.myForm.resetForm();
           this._snackBar.open('תודה על פניתך החשובה, נענה בהקדם', 'X', { duration: 3000 });
           this.router.navigate(['']);
